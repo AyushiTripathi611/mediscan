@@ -1,15 +1,13 @@
 import React from 'react';
-import NavbarComponent from '../navbar/NavBar';
-import CarouselComponent from '../carousal/Carousal';
+// import CarouselComponent from '../carousal/Carousal';
 import OptionsComponent from '../options/Options';
 
 const Home = () => {
   return (
     <div>
-      <NavbarComponent />
       <div className="container">
         <div>
-          <CarouselComponent />
+          {/* <CarouselComponent /> */}
         </div>
         <OptionsComponent />
       </div>

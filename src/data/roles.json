@@ -1,10 +1,13 @@
 {
-    "admin@gmail.com": {
-    "password": "sampleadmin",
-    "role": "admin"
+    "admin": {
+        "email": "admin@gmail.com", 
+        "password": "sampleadmin",
+        "role": "admin"
     },
-    "user@gmail.com": {
-    "password": "sampleuser",
-    "role": "member"
+    
+    "user": {
+        "email": "user@gmail.com",
+        "password": "sampleuser",
+        "role": "member"
     }
-    }
+}

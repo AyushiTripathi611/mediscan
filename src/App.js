@@ -1,50 +1,26 @@
-// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import React from 'react';
-// // import { Link } from 'react-router-dom';
-// // import { useState } from 'react';
-// import './App.css';
-// import Signup from './components/signup/signup';
-// import Login from './components/login/login';
-// import Home from './components/home/home';
-// import ForgotPassword from './components/forgotpassword/forgotpassword';
-// import Query from './components/query/query';
-
-// function App(props) {
-// return (
-// <Router>
-// {/* <ToggleButton/> */}
-// <Routes>
-// <Route exact path="/" element={<Login/>} />
-// <Route exact path="/signup" element={<Signup/>} />
-// <Route exact path="/forgotpassword" element={<ForgotPassword/>} />
-// <Route exact path="/home" element={<Home/>} />
-// <Route exact path="/query" element={<Query/>} />
-
-
-// </Routes>
-// </Router>
-
-// );
-// }
-
-// export default App;
-
-
-
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Home from './components/home/home';
 import Query from './components/query/query';
+import NavbarComponent from './components/navbar/NavBar';
+import Login from './components/loginAndSignup/LogIn&SignUp';
 
 const App = () => {
+  const [showLogin, setShowLogin] = useState(true)
+  console.log("logged in state", setShowLogin)
+
   return (
+    <>
+    <NavbarComponent showLogin={showLogin} />
     <Router>
       <Routes>
-        <Route path="/" component={<Home/>} />
-        <Route path="/query" component={<Query/>} />
-        {/* Add more routes as needed */}
+        <Route path="login" element={<Login setShowLogin={setShowLogin} />} />
+        {showLogin ? 
+            <Route path="/" element={<Navigate to={"login"} />} /> :  
+        <Route path="/" element={<Home/>} />}
+        <Route path="query" element={<Query/>} />
       </Routes>
-    </Router>
+    </Router></>
   );
 };
 
