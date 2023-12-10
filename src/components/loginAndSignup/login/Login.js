@@ -1,46 +1,38 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import usersData from "../../data/roles.json";
+import usersData from "../../../data/roles.json";
 import "./login.css"; // Import your CSS file
 
-function Login() {
-    const [toggle, handleclick] = useState(false);
-    const handleClick = () => {
-        handleclick(!toggle); // Toggle the class on each click
-        console.log("handleclick");
-    };
-
+export default function Login({setShowLogin}) {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const handleLogin = (e) => {
         e.preventDefault();
-
-        const user = usersData[email];
+        const user = usersData[email.split('@')[0].toLowerCase()]     
+        // const user = usersData[email];
 
         if (user && user.password === password) {
             if (user.role === "admin") {
                 // Redirect to the admin dashboard if the user is an admin
-                navigate("/admin");
+                // navigate("/admin");
+                navigate("/");
             } else {
                 // Redirect to the event form page for regular users
-                navigate("/user");
+                navigate("/");
             }
         } else {
             alert("Invalid email address or password.");
         }
+        setShowLogin(false)
     }
 
     return (
-        <div className="login-wrapper text-center rounded-2">
+        <div>
             <div className={`login bg-light-subtle rounded-4`}>
                 <form onSubmit={handleLogin}>
                     <div className="form-wrapper p-5">
-                        <div className="d-flex justify-content-center p-0 c rounded-4 mt-5 mb-3 border">
-                            <Link id="log" className="col text-white background rounded-4 p-3" to="/">Login</Link>
-                            <Link id="sign" onClick={handleClick} className="col text-black rounded-end-4 p-3" to="/signup">Signup</Link>
-                        </div>
 
                         <input
                             type="email"
@@ -74,5 +66,3 @@ function Login() {
         </div>
     );
 }
-
-export default Login;

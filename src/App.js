@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import Home from './components/home/home';
 import Query from './components/query/query';
 import NavbarComponent from './components/navbar/NavBar';
-import Login from './components/loginAndSignup/LogIn&SignUp';
+import LoginAndSignUp from './components/loginAndSignup/LogInAndSignUp';
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(true)
@@ -14,7 +14,7 @@ const App = () => {
     <NavbarComponent showLogin={showLogin} />
     <Router>
       <Routes>
-        <Route path="login" element={<Login setShowLogin={setShowLogin} />} />
+        <Route path="login" element={<LoginAndSignUp setShowLogin={setShowLogin} />} />
         {showLogin ? 
             <Route path="/" element={<Navigate to={"login"} />} /> :  
         <Route path="/" element={<Home/>} />}
