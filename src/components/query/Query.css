@@ -15,24 +15,20 @@
   }
   
   .user-message {
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 5px;
+    max-width: 70%;
+  }
+  
+  .bot-message {
     background-color: #007bff;
     color: #fff;
     border-radius: 5px;
     padding: 8px;
     margin: 5px;
     max-width: 70%;
-    align-self: flex-end;
-    word-wrap: break-word;
-  }
-  
-  .bot-message {
-    background-color: #eee;
-    border-radius: 5px;
-    padding: 8px;
-    margin: 5px;
-    max-width: 70%;
-    align-self: flex-start;
-    word-wrap: break-word;
   }
   
   .chatbot-input {

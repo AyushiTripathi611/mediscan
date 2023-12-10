@@ -18,7 +18,7 @@ const App = () => {
         {showLogin ? 
             <Route path="/" element={<Navigate to={"login"} />} /> :  
         <Route path="/" element={<Home/>} />}
-        <Route path="query" element={<Query/>} />
+        <Route path="/query" element={<Query/>} />
       </Routes>
     </Router></>
   );
