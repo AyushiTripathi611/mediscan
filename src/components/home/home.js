@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const Home = () => {
   const navigate = useNavigate()
   return (
-    <div className='flex flex-col items-center justify-center gap-10 mt-52 mx-auto w-fit'>
+    <div className='flex flex-col items-center justify-center gap-10 mt-32 mx-auto w-fit'>
     <div className='flex flex-col items-center justify-center text-white text-2xl'>
       <FaHandsHelping size={40}/><span>How can we help you?</span>
     </div>

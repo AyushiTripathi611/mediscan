@@ -14,10 +14,12 @@ const App = () => {
     <NavbarComponent showLogin={showLogin} />
     <Router>
       <Routes>
-        <Route path="login" element={<LoginAndSignUp setShowLogin={setShowLogin} />} />
-        {showLogin ? 
-            <Route path="/" element={<Navigate to={"login"} />} /> :  
-        <Route path="/" element={<Home/>} />}
+        <Route path="/" element={<LoginAndSignUp setShowLogin={setShowLogin} />} />
+        {/* {showLogin ?  */}
+            {/* <Route path="/" element={<Navigate to={"login"} />} />  */}
+            {/* :   */}
+        <Route path="/home" element={<Home/>} />
+        {/* } */}
         <Route path="/query" element={<Query/>} />
       </Routes>
     </Router></>

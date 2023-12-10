@@ -30,7 +30,7 @@ useEffect(() => {
   }, [chat]);
 
   return (
-    <div className="flex flex-col w-10/12 h-[800px] mx-auto border rounded-md mt-10 justify-between">
+    <div className="flex flex-col w-10/12 h-[500px] mx-auto border rounded-md mt-10 justify-between">
       <div ref={chatRef} className="w-full overflow-auto">
         {chat.map((message, index) => (
           <div className={`w-full flex ${message.isUser && 'justify-end'}`}>

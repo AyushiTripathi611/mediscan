@@ -17,10 +17,10 @@ export default function Login({setShowLogin}) {
             if (user.role === "admin") {
                 // Redirect to the admin dashboard if the user is an admin
                 // navigate("/admin");
-                navigate("/");
+                navigate("/home");
             } else {
                 // Redirect to the event form page for regular users
-                navigate("/");
+                navigate("/home");
             }
         } else {
             alert("Invalid email address or password.");

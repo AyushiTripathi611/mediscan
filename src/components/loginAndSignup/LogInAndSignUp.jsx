@@ -9,8 +9,8 @@ export default function LoginAndSignUp({setShowLogin}) {
          setToggle(toggleTo)
     }  
 	
-	return <div className="mx-auto flex flex-col gap-5 w-[500px]">
-    <div className="flex h-20 mt-32 border rounded-2xl bg-white">
+	return <div className="mx-auto flex flex-col gap-3 w-[500px]">
+    <div className="flex h-20 mt-11 border rounded-2xl bg-white">
         <div onClick={() => handleToggle('login')}  className={`${toggle === 'login' ? 'bg-[#003459] text-white' : 'text-black'} flex items-center justify-center w-1/2 border rounded-l-xl`}>Login</div>
         <div onClick={() => handleToggle('signup')} className={`${toggle === 'signup' ? 'bg-[#003459] text-white' : 'text-black'} flex items-center justify-center w-1/2 border rounded-r-xl`}>SignUp</div>
     </div>
